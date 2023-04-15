@@ -107,7 +107,7 @@ int pop(struct Stack* stack)
 	    return stack->array[stack->top--];
 }
 
-// Funcion para regresar el valor del tope de la pila sin quitarlo
+
 int peek(struct Stack* stack)
 {
 	    if (isEmpty(stack))
@@ -115,7 +115,7 @@ int peek(struct Stack* stack)
 	    return stack->array[stack->top];
 }
 
-// Funcion principal para probar las operaciones.
+
 int main()
 {
 	    struct Stack* stack = createStack(11);
