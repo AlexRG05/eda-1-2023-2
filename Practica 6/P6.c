@@ -112,7 +112,7 @@ void insertDerpalabra( struct PALABRA **palabra, int dato )
  
  
 
-void eliminaIzqBicola( struct PALABRA **palabra )
+void eliminaIzqpalabra( struct PALABRA **palabra )
 {
  
  
@@ -194,7 +194,7 @@ int tienepalindromosLapalabra( struct PALABRA **palabra )
  
  
  
-// Libera la memoria RAM usada por la Bicola:
+
 void borraLapalabra( struct PALABRA **palabra )
 {
 
@@ -215,7 +215,7 @@ void borraLapalabra( struct PALABRA **palabra )
  
  
 
-int cuantosNodosTieneLapalabra( struct PALABRA **palabra )
+int cuantospalindromosTieneLapalabra( struct PALABRA **palabra )
 {
 
  
