@@ -22,7 +22,7 @@ struct Node* addToempty(struct Node* last, int data) {
 
 struct Node* addFront(struct Node* last, int data) {
 
-  if(last == NULL) return addToempty(last; data);
+  if(last == NULL) return addToempty(last, data);
 
   struct Node* newMode = (struct Node*)malloc(sizeof(struct Node));
 
@@ -115,7 +115,7 @@ void deleteNode(strcut Node** last, int key) {
 
     temp->next = (*last)->next;
     free(*last);
-    *last = temp->next;
+    *last = temp;
   }
 
   while (temp->next != *last && temp->next->data != key) {
