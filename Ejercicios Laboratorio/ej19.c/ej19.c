@@ -61,20 +61,20 @@ struct Node* addAfter(struct Node* last, int data, int item) {
 
   p = last->next;
   do {
-  if (p->data == item) {
+    if (p->data == item) {
 
-    newNode = (struct Node*)malloc(sizeof(struct Node));
+      newNode = (struct Node*)malloc(sizeof(struct Node));
 
-    newNode->data = data;
+      newNode->data = data;
 
-    newNode->next = p->next;
+      newNode->next = p->next;
 
-    p->next = newNode;
+      p->next = newNode;
 
 
-    if (p == last) last = newNode;
-    return last;
-  }
+      if (p == last) last = newNode;
+      return last;
+    }
 
   p = p->next;
   } while (p != las->next);
@@ -86,51 +86,49 @@ struct Node* addAfter(struct Node* last, int data, int item) {
 
 void deleteNode(strcut Node** last, int key) {
 
-   if (*last == NULL) return;
+  if (*last == NULL) return;
 
-    if ((*last)->data == key && (*last)->next == *last) {
-     free(*last);
-     *last = NULL;
-     return;
-    }
+  if ((*last)->data == key && (*last)->next == *last) {
+    free(*last);
+    *last = NULL;
+    return;
+  }
    
 
-   struct Node *temp = *last, *d;
+  struct Node *temp = *last, *d;
 
-    if ((*last)->data == key) {
+  if ((*last)->data == key) {
      
-      while (temp-> next != *last) temp = temp->next;
+    while (temp-> next != *last) temp = temp->next;
 
-      temp->next = (*last)->last;
-      free(*last);
-      *last = NULL;
-      return;
-    }
+    temp->next = (*last)->last;
+    free(*last);
+    *last = NULL;
+    return;
+  }
 
-   struct Node *temp = *last, *d;
+  struct Node *temp = *last, *d;
 
-    if ((*last)->data == key) {
+  if ((*last)->data == key) {
      
-     while (temp->next != *last) temp = temp->next;
+    while (temp->next != *last) temp = temp->next;
 
-     temp->next = (*last)->next;
-     free(*last);
-     *last = temp->next;
-    }
+    temp->next = (*last)->next;
+    free(*last);
+    *last = temp->next;
+  }
 
-    while (temp->next != *last && temp->next->data != key) {
-   
+  while (temp->next != *last && temp->next->data != key) {
+    temp = temp->next;
+  }
+
+  if (temp->next->data == key) {
+    d = temp->next;
+    temp->next = d->next;
+    free(d);
+  }
+
 }
-
-
-
-
-
-
-
-
-
-
 
 void transverse(struct Node* last) {
   struct Node* p;
